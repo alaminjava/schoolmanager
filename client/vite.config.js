@@ -1,21 +1,22 @@
-import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+// Export Vite config
 export default defineConfig({
-  root: fileURLToPath(new URL(".", import.meta.url)),
+  root: './client', // Ensure Vite works within the client directory
   build: {
-    outDir: "../dist",
-    emptyOutDir: true,
+    outDir: 'client/dist', // Specify the output directory for Vercel
+    emptyOutDir: true, // Clear out old build files
   },
   plugins: [react()],
   server: {
-    host: "0.0.0.0",
-    port: 5173,
+    host: "0.0.0.0", // Make server accessible
+    port: 5173, // Default port for Vite
     strictPort: false,
     proxy: {
+      // Proxy API requests to the back-end
       "/api": {
-        target: "http://127.0.0.1:5001",
+        target: "https://school-manager-md1w.onrender.com", // Your Render back-end URL
         changeOrigin: true,
         secure: false,
       },

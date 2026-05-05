@@ -1,0 +1,29 @@
+# Node.js dependencies
+/node_modules/
+
+# Build output
+/dist/
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.example
+
+# Vercel or Netlify deployment files
+.vscode/
+.vite/
+
+# IDE Files
+.idea/
+.vscode/
+
+# Other files you might want to ignore (e.g., coverage reports)
+coverage/
